@@ -1,0 +1,46 @@
+/* Menu fixo no topo */
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #005f73;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 100;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Lista horizontal e sem marcadores */
+.menu-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+/* Links do menu */
+.menu-link {
+  color: #edf6f9;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  color: #94d2bd;
+  outline: none;
+}
+
+/* Conteúdo principal da página */
+.layout-content {
+  padding-top: 70px; /* Espaço para o menu fixo */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}

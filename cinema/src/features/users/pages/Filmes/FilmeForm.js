@@ -1,5 +1,8 @@
 // src/features/filmes/components/FilmeForm.js
 import React, { useState } from "react";
+import Input from "../../../../components/Input/Input.js";
+import Button from "../../../../components/Button/Button.js";
+
 
 export default function FilmeForm() {
   const [formData, setFormData] = useState({
@@ -41,16 +44,18 @@ export default function FilmeForm() {
   };
 
   return (
+
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
         <label className="form-label">Título</label>
-        <input
+        <Input
           name="titulo"
           className="form-control"
           value={formData.titulo}
           onChange={handleChange}
           required
         />
+        
       </div>
 
       <div className="mb-3">
@@ -66,7 +71,7 @@ export default function FilmeForm() {
 
       <div className="mb-3">
         <label className="form-label">Gênero</label>
-        <input
+        <Input
           name="genero"
           className="form-control"
           value={formData.genero}
@@ -77,7 +82,7 @@ export default function FilmeForm() {
 
       <div className="mb-3">
         <label className="form-label">Classificação</label>
-        <input
+        <Input
           name="classificacao"
           className="form-control"
           value={formData.classificacao}
@@ -88,7 +93,7 @@ export default function FilmeForm() {
 
       <div className="mb-3">
         <label className="form-label">Duração (minutos)</label>
-        <input
+        <Input
           type="number"
           name="duracao"
           className="form-control"
@@ -100,7 +105,7 @@ export default function FilmeForm() {
 
       <div className="mb-3">
         <label className="form-label">Estreia</label>
-        <input
+        <Input
           type="date"
           name="estreia"
           className="form-control"
@@ -110,9 +115,8 @@ export default function FilmeForm() {
         />
       </div>
 
-      <button className="btn btn-primary" type="submit">
-        Cadastrar Filme
-      </button>
+      <Button variant="success">Cadastrar</Button>
+
     </form>
   );
 }

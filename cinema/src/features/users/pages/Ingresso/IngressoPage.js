@@ -1,12 +1,12 @@
-import FilmeForm from "./FilmeForm";
+import IngressoForm from "./IngressoForm";
 import Layout from "../../../../components/Layout/Layout";
 
-export default function FilmePage() {
+export default function IngressoPage() {
   return (
     <Layout>
       <div className="container mt-4">
         <h1>Compra de ingresso</h1>
-        <FilmeForm />
+        <IngressoForm />
         <hr />
       </div>
     </Layout>

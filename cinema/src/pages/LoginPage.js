@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import Button from '../components/Button/Button';
+import { useNavigate } from 'react-router-dom';  // importar o hook
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const navigate = useNavigate();  // criar o navigate
 
   const handleLogin = () => {
-    alert(`Email: ${email}\nSenha: ${senha}`);
+    alert(`Cadastro feito com sucesso`);
+    navigate('/filmes'); // redireciona para essa rota
   };
 
   return (

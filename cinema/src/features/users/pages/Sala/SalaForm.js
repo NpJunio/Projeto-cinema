@@ -17,15 +17,16 @@ export default function SalaForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("Form data:", formData);
 
-    const sala = {
+    const novaSala = {
       ...formData,
-      capacidade: parseInt(formData.capacidade)
+      capacidade: parseInt(formData.capacidade, 10)
     };
 
-    const salas = JSON.parse(localStorage.getItem("salas")) || [];
-    salas.push(sala);
-    localStorage.setItem("salas", JSON.stringify(salas));
+    const salas = JSON.parse(localStorage.getItem("sala")) || [];
+    salas.push(novaSala);
+    localStorage.setItem("sala", JSON.stringify(salas));
 
     alert("Sala cadastrada com sucesso!");
 
@@ -77,7 +78,8 @@ export default function SalaForm() {
         </select>
       </div>
 
-      <Button variant="success">Cadastrar</Button>
+      <Button type="submit" variant="success">Cadastrar</Button>
+
     </form>
   );
 }

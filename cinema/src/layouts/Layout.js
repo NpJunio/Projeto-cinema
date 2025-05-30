@@ -8,9 +8,9 @@ const Layout = ({ children }) => {
         <ul className="menu-list">
           <li><a href="/" className="menu-link">Início</a></li>
           <li><a href="/filmes" className="menu-link">filmes</a></li>
-          <li><a href="/filmes" className="menu-link">Sala</a></li>
-          <li><a href="/filmes" className="menu-link">Sessão</a></li>
-          <li><a href="/filmes" className="menu-link">Ingresso</a></li>
+          <li><a href="/sala" className="menu-link">Sala</a></li>
+          <li><a href="/sessao" className="menu-link">Sessão</a></li>
+          <li><a href="/ingresso" className="menu-link">Ingresso</a></li>
         </ul>
       </nav>
 

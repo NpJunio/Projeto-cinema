@@ -9,7 +9,6 @@ export default function FilmePage() {
       <h1>Cadastro de Filme</h1>
       <FilmeForm />
       <hr />
-      <FilmeList />
     </div>
   );
 }

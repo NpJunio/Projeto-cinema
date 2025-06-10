@@ -1,6 +1,0 @@
-services:
-  projetocinema:
-    image: projetocinema
-    build:
-      context: .
-      dockerfile: ./Dockerfile

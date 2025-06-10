@@ -1,0 +1,56 @@
+
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Sala {
+  id         Int      @id @default(autoincrement())
+  nome       String
+  capacidade Int
+  tipo       String
+  sessoes    Sessao[]
+}
+
+model Filme {
+  id            Int      @id @default(autoincrement())
+  titulo        String
+  descricao     String
+  genero        String
+  classificacao String
+  duracao       Int
+  estreia       DateTime
+  imagem        String?   // armazena o base64 da imagem (ou URL se preferir)
+  sessoes       Sessao[]
+}
+
+model Sessao {
+  id        Int      @id @default(autoincrement())
+  filmeId   Int
+  salaId    Int
+  dataHora  DateTime
+  preco     Float
+  idioma    String
+  formato   String
+  ingressos Ingresso[]
+  filme     Filme      @relation(fields: [filmeId], references: [id])
+  sala      Sala       @relation(fields: [salaId], references: [id])
+}
+
+model Ingresso {
+  id        Int      @id @default(autoincrement())
+  cliente   String
+  cpf       String
+  assento   String
+  pagamento String
+  sessaoId  Int
+  createdAt DateTime @default(now())
+
+  sessao    Sessao   @relation(fields: [sessaoId], references: [id])
+}

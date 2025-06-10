@@ -1,0 +1,57 @@
+.card-img-top {
+  width: 200px;
+  height: 250px;
+  margin-top: 16px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; /* borda mais arredondada */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* sombra leve na imagem */
+  transition: transform 0.3s ease;
+}
+.card-img-top:hover {
+  transform: scale(1.05); /* efeito sutil de zoom ao passar o mouse */
+}
+
+.card {
+  max-width: 280px;
+  height: 430px;
+  margin: 20px auto; /* centraliza e dá espaçamento vertical */
+  margin-top: 20px;
+  border-radius: 12px; /* bordas arredondadas no card */
+  box-shadow: 0 8px 20px rgba(44, 62, 80, 0.15); /* sombra elegante */
+  background: #fefefe;
+  transition: box-shadow 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 12px 30px rgba(44, 62, 80, 0.25); /* sombra mais forte no hover */
+}
+
+.card-title {
+  color: #34495e; /* azul escuro mais suave */
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  padding: 0 12px 20px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container-filmes {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  max-width: 1200px;
+  margin: 40px auto;
+}

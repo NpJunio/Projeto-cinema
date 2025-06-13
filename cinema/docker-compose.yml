@@ -7,14 +7,14 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: cinema
-      POSTGRES_USER: admin
+      POSTGRES_DB: cinema1
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
   backend:
-    build: ./server
+    build: ./server/backend
     container_name: nestjs_backend
     restart: always
     ports:
@@ -22,10 +22,13 @@ services:
     depends_on:
       - postgres
     environment:
-      DATABASE_URL: postgres://admin:admin@postgres:5432/cinema
+     DATABASE_URL: postgresql://postgres:admin@postgres:5432/cinema1
+
     volumes:
-      - ./server:/app
+      - ./server/backend:/app
+    working_dir: /app
     command: npm run start:dev
+
 
   frontend:
     build: ./frontend
